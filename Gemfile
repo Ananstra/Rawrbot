@@ -2,12 +2,12 @@ source 'http://rubygems.org'
 
 ruby '~> 2.2'
 gem 'cinch', '2.2.4'
+gem 'cinch-test'
 gem 'ffi'
+gem 'rake'
 gem 'rspec'
 gem 'rspec-mocks'
-gem 'cinch-test'
-gem 'rake', '<11'
-gem 'rubocop', '~> 0.34.2', require: false
+gem 'rubocop', require: false
 
 # Required by plugins: UrbanDictionary, UrlTitle 
 gem 'nokogiri'

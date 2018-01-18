@@ -29,7 +29,7 @@ source = ARGV[0]
 target = ARGV[1]
 
 # Check if input file exists.
-if !(File.exists?(source))
+if !File.exists?(source)
   abort("File #{source} not found. Aborting.\n")
 end
 
@@ -44,7 +44,7 @@ GDBM.open(source) do |db|
         val.delete!("\r")
         val.delete!("\n")
         file.write("#{key}#{delimiter}#{val}\n")
-      rescue => e
+      rescue StandardError => e
         warn("Failed to parse line. Error: #{e}\nLine: #{key}#{delimiter}#{val}")
       end
     end
